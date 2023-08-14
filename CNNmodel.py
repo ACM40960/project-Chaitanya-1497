@@ -79,3 +79,6 @@ print(f"Test accuracy: {accuracy:.4f}")
 print(f"Test precision: {precision:.4f}")
 print(f"Test recall: {recall:.4f}")
 print(f"Test AUC: {auc:.4f}")
+
+#Saving the model
+model.save('model.h5')
