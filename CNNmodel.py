@@ -64,7 +64,7 @@ model = Sequential([
 model.summary()
 
 # Compiling the model with Adam optimizer and metrics including accuracy and precision
-model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy', Precision(name='precision')])
+model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy', Precision(name='precision'), Recall(name='recall'), AUC(name='auc')])
 
 # Define a callback to reduce the learning rate when validation loss plateaus
 reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.2, patience=1, verbose=1)
@@ -72,4 +72,10 @@ reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.2, patience=1, verbos
 # Train the model using the training set and validate using the validation set
 model.fit(training_set, epochs=10, validation_data=validation_set, callbacks=[reduce_lr])
 
-model.evaluate(test_set)
+#Extracting the metrics
+loss,accuracy,precision,recall,auc = model.evaluate(test_set)
+
+print(f"Test accuracy: {accuracy:.4f}")
+print(f"Test precision: {precision:.4f}")
+print(f"Test recall: {recall:.4f}")
+print(f"Test AUC: {auc:.4f}")
