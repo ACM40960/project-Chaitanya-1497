@@ -94,7 +94,27 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy',
 reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.2, patience=1, verbose=1)
 
 # Train the model using the training set and validate using the validation set
-model.fit(training_set, epochs=20, validation_data=validation_set, callbacks=[reduce_lr])
+history = model.fit(training_set, epochs=20, validation_data=validation_set, callbacks=[reduce_lr])
+
+# Plot training & validation accuracy values
+plt.plot(history.history['accuracy'])
+plt.plot(history.history['val_accuracy'])
+#Adding title and labels to x and y axis
+plt.title('Model Accuracy')
+plt.xlabel('Epoch')
+plt.ylabel('Accuracy')
+plt.legend(['Train', 'Validation'], loc='lower right')
+plt.show()
+
+# Plot training & validation loss values
+plt.plot(history.history['loss'])
+plt.plot(history.history['val_loss'])
+#Adding title and labels to x and y axis
+plt.title('Model Loss')
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
+plt.legend(['Train', 'Validation'], loc='lower right')
+plt.show()
 
 #Extracting the metrics
 loss,accuracy,precision,recall,auc = model.evaluate(test_set)
