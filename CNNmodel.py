@@ -56,32 +56,33 @@ test_set = test_datagen.flow_from_directory(
 # Create a Sequential model
 model = Sequential([
     # First Convolutional layer
-    Conv2D(filters=8, kernel_size=(4, 4), input_shape=(64, 64, 3)),
+    Conv2D(filters=16, kernel_size=(4, 4), input_shape=(64, 64, 3)),
     BatchNormalization(),  # Add BatchNormalization after Conv2D
     Activation('relu'),    # Add Activation layer
     MaxPooling2D(pool_size=(2, 2)),  # Max pooling
     
     # Second Convolutional layer
-    Conv2D(filters=8, kernel_size=(4, 4), kernel_regularizer=l2(0.01)),
+    Conv2D(filters=32, kernel_size=(4, 4), kernel_regularizer=l2(0.01)),
     BatchNormalization(),  # Add BatchNormalization after Conv2D
     Activation('relu'),    # Add Activation layer
     MaxPooling2D(pool_size=(2, 2)),  # Max pooling
     
     # Third Convolutional layer
-    Conv2D(filters=16, kernel_size=(4, 4), kernel_regularizer=l2(0.01)),
+    Conv2D(filters=64, kernel_size=(4, 4), kernel_regularizer=l2(0.01)),
     BatchNormalization(),  # Add BatchNormalization after Conv2D
     Activation('relu'),    # Add Activation layer
     MaxPooling2D(pool_size=(2, 2)),  # Max pooling
     
     # Fourth Convolutional layer
-    Conv2D(filters=16, kernel_size=(4, 4), kernel_regularizer=l2(0.01)),
+    Conv2D(filters=128, kernel_size=(4, 4), kernel_regularizer=l2(0.01)),
     BatchNormalization(),  # Add BatchNormalization after Conv2D
     Activation('relu'),    # Add Activation layer
     MaxPooling2D(pool_size=(2, 2)),  # Max pooling
     
-    Flatten(),  # Flatten the 3D feature maps to 1D
-    Dense(1, activation='sigmoid'),  # Fully connected layer for binary classification
-    Dropout(0.1)  # Dropout layer to reduce overfitting
+    Flatten(),  # Flatten feature maps to 1D
+    Dense(32, activation = "relu"), # Fully connected layer with 32 neurons and ReLU activation
+    Dense(16, activation = "relu"), # Fully connected layer with 16 neurons and ReLU activation
+    Dense(1, activation='sigmoid')  # Fully connected layer for binary classification
 ])
 
 model.summary()
