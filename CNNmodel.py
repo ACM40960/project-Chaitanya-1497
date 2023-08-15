@@ -8,27 +8,50 @@ from tensorflow.keras.regularizers import l1, l2
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from PIL import Image
 
-# Data Preprocessing
-train_datagen = ImageDataGenerator(rescale=1./255, validation_split=0.2)  # Normalize pixel values to [0, 1]
-test_datagen = ImageDataGenerator(rescale=1./255)
+# Data augmentation configuration for training data
+train_datagen = ImageDataGenerator(
+    rescale=1./255,             # Rescale pixel values to [0, 1]
+    rotation_range=30,          # Rotate images randomly by up to 30 degrees
+    width_shift_range=0.2,      # Shift images horizontally by up to 20% of the width
+    height_shift_range=0.2,     # Shift images vertically by up to 20% of the height
+    shear_range=0.2,            # Apply shear transformations
+    zoom_range=0.3,             # Apply zoom transformations
+    horizontal_flip=True,       # Flip images horizontally
+    fill_mode='nearest',        # Fill new pixels with the nearest available pixel
+    brightness_range=(0.5, 1.5),  # Adjust brightness of images
+    validation_split=0.2        # Specify the validation split here
+)
 
-training_set = train_datagen.flow_from_directory('Copy training set file location here',
-                                                target_size=(64, 64),  # Set the target size (width, height) for resizing
-                                                batch_size=220,
-                                                class_mode='binary',
-                                                subset='training')  # For binary classification. Use 'categorical' for multi-class
+#Data preprocessing
+test_datagen = ImageDataGenerator(
+    rescale=1./255             # Rescale pixel values to [0, 1]
+)
 
-validation_set = train_datagen.flow_from_directory('Copy training set file location here',
-                                                target_size=(64, 64),  
-                                                batch_size=50,
-                                                class_mode='binary',
-                                                subset='validation')  
+# Generating training data generator
+training_set = train_datagen.flow_from_directory(
+  'Copy training set file location here',  # Path to the training dataset
+    target_size=(64, 64),      # Set the target size (width, height) for resizing
+    batch_size=220,            # Number of images in each batch
+    class_mode='binary',       # For binary classification
+    subset='training'          # Subset of the data (training portion)
+)
 
+# Generating validation data generator
+validation_set = train_datagen.flow_from_directory(
+    'Copy training set file location here',  # Path to the training dataset
+    target_size=(64, 64),      # Set the target size (width, height) for resizing
+    batch_size=50,             # Number of images in each batch
+    class_mode='binary',       # For binary classification
+    subset='validation'        # Subset of the data (validation portion)
+)
 
-test_set = test_datagen.flow_from_directory('Copy test set file location here',
-                                            target_size=(64, 64),
-                                            batch_size=150,
-                                            class_mode='binary')
+# Generating testing data generator
+test_set = test_datagen.flow_from_directory(
+    'Copy test set file location here',  # Path to the testing dataset
+    target_size=(64, 64),      # Set the target size (width, height) for resizing
+    batch_size=150,            # Number of images in each batch
+    class_mode='binary'        # For binary classification
+)
 
 # Create a Sequential model
 model = Sequential([
