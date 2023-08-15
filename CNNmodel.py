@@ -70,7 +70,7 @@ model.compile(optimizer='adam', loss='binary_crossentropy', metrics=['accuracy',
 reduce_lr = ReduceLROnPlateau(monitor='val_loss', factor=0.2, patience=1, verbose=1)
 
 # Train the model using the training set and validate using the validation set
-model.fit(training_set, epochs=10, validation_data=validation_set, callbacks=[reduce_lr])
+model.fit(training_set, epochs=20, validation_data=validation_set, callbacks=[reduce_lr])
 
 #Extracting the metrics
 loss,accuracy,precision,recall,auc = model.evaluate(test_set)
