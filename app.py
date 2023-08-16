@@ -18,12 +18,12 @@ def predict_label(img_path):
     i = i.reshape(1, 64, 64, 3)
     # predicting if patient is positive or negative
     p = model.predict(i)
-    if p > 0.5:
-        p = 1
-    else:
+    if p < 0.5:
         p = 0
+    else:
+        p = 1
     # adding labels and returning it
-    labels = {0: 'The patient is positive for malaria', 1: 'The patient is negative for malaria'}
+    labels = {0: 'The patient is negative for malaria', 1: 'The patient is positive for malaria'}
     predicted_label = labels[p]
 
     return predicted_label
