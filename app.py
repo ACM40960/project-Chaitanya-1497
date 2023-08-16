@@ -1,4 +1,6 @@
-from flask import Flask, render_template, request
+import os
+
+from flask import Flask, render_template, request, url_for
 from keras.models import load_model
 from keras.preprocessing import image
 
@@ -38,10 +40,9 @@ def main():
 def get_output():
     if request.method == 'POST':
         img = request.files['my_image']
-        img_path = "prediction/" + img.filename
+        img_path = "static/" + img.filename
         img.save(img_path)
 
-        # Predict the label of the uploaded image
         p = predict_label(img_path)
 
     return render_template("index.html", prediction=p, img_path=img_path)

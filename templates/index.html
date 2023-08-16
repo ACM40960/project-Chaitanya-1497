@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Malaria Prediction</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .jumbotron {
+      background-color: #337ab7;
+      color: #fff;
+      margin-bottom: 30px;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    .upload-form {
+      margin-top: 20px;
+    }
+    .upload-btn {
+      margin-top: 10px;
+    }
+    .prediction-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .prediction-image {
+      max-width: 200px;
+      max-height: 200px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="jumbotron">Malaria Prediction</h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 upload-form">
+      <form class="form-horizontal" action="/submit" method="post" enctype="multipart/form-data">
+        <div class="form-group">
+          <label class="control-label" for="uploadInput">Upload Your Image:</label>
+          <input type="file" class="form-control" name="my_image" id="uploadInput">
+        </div>
+        <div class="form-group upload-btn">
+          <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+      </form>
+    </div>
+
+    {% if prediction %}
+    <div class="col-md-6 prediction-container">
+      <img src="{{img_path}}" class="prediction-image">
+    </div>
+    </div>
+
+    <h2 class="mt-3">Prediction: <i>{{prediction}}</i></h2>
+    {% endif %}
+  </div>
+</div>
+
+</body>
+</html>
