@@ -65,25 +65,25 @@ test_set = test_datagen.flow_from_directory(
 # Create a Sequential model
 model = Sequential([
     # First Convolutional layer
-    Conv2D(filters=16, kernel_size=(4, 4), input_shape=(64, 64, 3)),
+    Conv2D(filters=16, kernel_size=(3, 3), input_shape=(64, 64, 3)),
     BatchNormalization(),  # Add BatchNormalization after Conv2D
     Activation('relu'),    # Add Activation layer
     MaxPooling2D(pool_size=(2, 2)),  # Max pooling
     
     # Second Convolutional layer
-    Conv2D(filters=32, kernel_size=(4, 4), kernel_regularizer=l2(0.01)),
+    Conv2D(filters=32, kernel_size=(3, 3), kernel_regularizer=l2(0.01)),
     BatchNormalization(),  # Add BatchNormalization after Conv2D
     Activation('relu'),    # Add Activation layer
     MaxPooling2D(pool_size=(2, 2)),  # Max pooling
     
     # Third Convolutional layer
-    Conv2D(filters=64, kernel_size=(4, 4), kernel_regularizer=l2(0.01)),
+    Conv2D(filters=64, kernel_size=(3, 3), kernel_regularizer=l2(0.01)),
     BatchNormalization(),  # Add BatchNormalization after Conv2D
     Activation('relu'),    # Add Activation layer
     MaxPooling2D(pool_size=(2, 2)),  # Max pooling
     
     # Fourth Convolutional layer
-    Conv2D(filters=128, kernel_size=(4, 4), kernel_regularizer=l2(0.01)),
+    Conv2D(filters=128, kernel_size=(3, 3), kernel_regularizer=l2(0.01)),
     BatchNormalization(),  # Add BatchNormalization after Conv2D
     Activation('relu'),    # Add Activation layer
     MaxPooling2D(pool_size=(2, 2)),  # Max pooling
