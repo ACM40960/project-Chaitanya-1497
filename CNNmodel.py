@@ -27,30 +27,39 @@ test_datagen = ImageDataGenerator(
     rescale=1./255             # Rescale pixel values to [0, 1]
 )
 
-# Generating training data generator
+'Copy training set file location here'
+# Define the class indices with labels
+class_indices = {
+    'Uninfected': 0,
+    'Parasitized': 1
+}
+
 training_set = train_datagen.flow_from_directory(
-  'Copy training set file location here',  # Path to the training dataset
+    'Add training set path here',  # Path to the training dataset
     target_size=(64, 64),      # Set the target size (width, height) for resizing
     batch_size=220,            # Number of images in each batch
     class_mode='binary',       # For binary classification
+    classes=class_indices,     # Use the updated class indices
     subset='training'          # Subset of the data (training portion)
 )
 
 # Generating validation data generator
 validation_set = train_datagen.flow_from_directory(
-    'Copy training set file location here',  # Path to the training dataset
+    'Add validation set path here',  # Path to the training dataset
     target_size=(64, 64),      # Set the target size (width, height) for resizing
     batch_size=50,             # Number of images in each batch
     class_mode='binary',       # For binary classification
+    classes=class_indices,     # Use the updated class indices
     subset='validation'        # Subset of the data (validation portion)
 )
 
 # Generating testing data generator
 test_set = test_datagen.flow_from_directory(
-    'Copy test set file location here',  # Path to the testing dataset
+    'add test set path here',  # Path to the testing dataset
     target_size=(64, 64),      # Set the target size (width, height) for resizing
     batch_size=150,            # Number of images in each batch
-    class_mode='binary'        # For binary classification
+    class_mode='binary',       # For binary classification
+    classes=class_indices,     # Use the updated class indices
 )
 
 # Create a Sequential model
