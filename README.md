@@ -2,10 +2,7 @@
 Repository for Malaria Diagnosis
 
 ## Introduction:
-Malaria is a deadly disease that is caused by parasites that are transmitted to humans through the bite of an infected mosquito. It is a major public health problem in many parts of the world.
-No of Cases - 200 Million per year
-Death count - 400,000 per year
-Mostly Found in Africa and tropical countries.
+Malaria is a deadly disease caused by parasites transmitted to humans through the bite of an infected mosquito. It remains a significant public health challenge in various parts of the world, affecting approximately 200 million people each year, with around 400,000 lives lost.
 The project aims to use cell images acquired using blood smear tests to build a predictive model for Malaria diagnosis. This model can work in conjunction with traditional microscopy methods to expedite the process of obtaining diagnostic results.
 
 ### Diagnosis Methods
@@ -17,5 +14,8 @@ The project aims to use cell images acquired using blood smear tests to build a 
    
 3. Recently, as machine learning has enhanced, there has been a growing interest in automating diagnosis of malaria. One of the approaches to automated malaria diagnosis is using convolutional neural network (CNN) model. CNNs models are specially designed for image recognition. They have been effective at classifying malaria cells in images.
 
+### Implementation
+
+The entire model has been developed within a Jupyter Notebook environment. For running the model, a Python application is required. You can utilize Anaconda to install Jupyter Notebook, which includes a selection of pre-installed packages. Additionally, to execute the web application files(.py), integrated development environments (IDEs) like PyCharm and Spyder can be employed. These IDEs are also conveniently accessible through the Anaconda platform.
 
 
