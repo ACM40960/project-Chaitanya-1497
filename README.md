@@ -63,7 +63,6 @@ After training our Convolutional Neural Network (CNN) model on the Malaria datas
 **AUC (Area Under the Curve):** The AUC value of 0.9889 corresponds to the area under the Receiver Operating Characteristic (ROC) curve, indicating a strong ability of the model to distinguish between the positive and negative classes.
 
 ## Web Application
-
 The web application has been developed using Flask, a web framework that enables developers to create lightweight web applications rapidly and efficiently through Flask Libraries. To explore the application's functionality, ensure that the provided static, templates, app.py, and model.h5 files from this repository are placed within the same folder. Below, you will find images that illustrate the functioning of the application:
 
 <img src="https://github.com/ACM40960/project-Chaitanya-1497/assets/133139835/8eb9485d-8cae-4154-9455-42498b9f6035" alt="MalariaNeg" width="600"/>
@@ -71,3 +70,20 @@ The web application has been developed using Flask, a web framework that enables
 
 This application has been created to assist lab technicians. It empowers them to upload cell images acquired from microscopes. Upon submitting the image, the application swiftly generates predictions using the model.
 
+## Conclusion
+Our CNN model demonstrates a commendable level of sensitivity and precision in Malaria diagnosis. This advancement has the potential to expedite decision-making for lab technicians. As we look ahead, refining and expanding the model holds the promise of even more promising outcomes.
+
+## References
+1. S. V. Militante, ”Malaria Disease Recognition through Adaptive Deep Learning Models of Convolutional Neural Network,” 2019 IEEE 6th International Conference on Engineering Technologies and Applied Sciences (ICETAS), Kuala Lumpur, Malaysia, 2019, pp.1-6, doi: 10.1109/ICETAS48360.2019.9117446.
+
+2. https://lhncbc.nlm.nih.gov/LHC-research/LHC-projects/image-processing/malaria-screener.html
+
+3. https://www.cdc.gov/
+   
+4. Khongdet Phasinam, Tamal Mondal, Dony Novaliendry,Cheng-Hong Yang, Chiranjit Dutta, Mohammad Shabaz,”Analyzing the Performance of Machine Learning Techniques in
+Disease Prediction”, Journal of Food Quality, vol. 2022, Article ID 7529472, 9 pages, 2022
+
+## Authors
+
+- Chaitanya Ashok Malagikar
+- Vedanti Mahesh Borate
