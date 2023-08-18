@@ -23,3 +23,23 @@ The dataset we hve used is taken from Kaggle.
 Link: "https://www.kaggle.com/datasets/miracle9to9/files1"
 
 The dataset comprises a total of 43,390 cell images captured through blood smear tests. It is divided into two classes: Parasitised and Uninfected. The dataset contains training and test sets. Additionally, to establish a validation set, 20% of the training data has been allocated.
+
+## Libraries Used
+```
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.metrics import Precision, Recall, AUC
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout, BatchNormalization, Activation
+from tensorflow.keras.callbacks import ReduceLROnPlateau
+from tensorflow.keras.regularizers import  l2
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from PIL import Image
+import matplotlib.pyplot as plt
+```
+
+The following are the libraries used to run the web application in the .py file
+```
+from flask import Flask, render_template, request
+from keras.models import load_model
+from keras.preprocessing import image
+```
