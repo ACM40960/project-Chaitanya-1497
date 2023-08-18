@@ -42,10 +42,11 @@ The following are the libraries used to run the web application in the .py file
 from flask import Flask, render_template, request
 from keras.models import load_model
 from keras.preprocessing import image
-
-##Model
+```
+## Model
 The model consists of four convolutional layers, each using Rectified Linear Unit (ReLU) activation functions to introduce nonlinearity. The input data has a shape of (64, 64, 3). The convolutional layers employ ascending numbers of filters: 16, 32, 64, and 128 respectively. To accelerate training and serve as a regularizer, the Batch Normalization technique is utilized. Additionally, L2 regularization is employed to enhance generalization and mitigate overfitting. After the convolutional layers, the data is flattened and passed through a Deep Neural Network (DNN). The initial two layers of the DNN facilitate the learning of intricate data relationships. Finally, the output layer employs a sigmoid activation function to achieve binary classification.
 
-![image](https://github.com/ACM40960/project-Chaitanya-1497/assets/133139835/03490fe6-a563-478a-a75f-e7028887f6ae)
+![model_image](https://github.com/ACM40960/project-Chaitanya-1497/assets/133139835/4685ce92-c0b4-4f78-9c0d-4322e9373629)
+
 
 ```
