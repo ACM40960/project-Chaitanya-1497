@@ -1,5 +1,4 @@
 # Malaria Diagnosis (Disease Modeling)
-Repository for Malaria Diagnosis
 
 ## Introduction:
 Malaria is a deadly disease caused by parasites transmitted to humans through the bite of an infected mosquito. It remains a significant public health challenge in various parts of the world, affecting approximately 200 million people each year, with around 400,000 lives lost.
@@ -44,6 +43,11 @@ from keras.models import load_model
 from keras.preprocessing import image
 ```
 ## Model
+
+<img src="https://github.com/ACM40960/project-Chaitanya-1497/assets/133139835/ebd0e6d7-c961-474a-b40b-3913f255d483" alt="CNN Layers" width="600"/>
+
+*An example of a CNN model*
+
 The model consists of four convolutional layers, each using Rectified Linear Unit (ReLU) activation functions to introduce nonlinearity. The input data has a shape of (64, 64, 3). The convolutional layers employ ascending numbers of filters: 16, 32, 64, and 128 respectively. To accelerate training and serve as a regularizer, the Batch Normalization technique is utilized. Additionally, L2 regularization is employed to enhance generalization and mitigate overfitting. After the convolutional layers, the data is flattened and passed through a Deep Neural Network (DNN). The initial two layers of the DNN facilitate the learning of intricate data relationships. Finally, the output layer employs a sigmoid activation function to achieve binary classification.
 
 ![model_image](https://github.com/ACM40960/project-Chaitanya-1497/assets/133139835/4685ce92-c0b4-4f78-9c0d-4322e9373629)
