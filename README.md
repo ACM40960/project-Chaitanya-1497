@@ -48,5 +48,26 @@ The model consists of four convolutional layers, each using Rectified Linear Uni
 
 ![model_image](https://github.com/ACM40960/project-Chaitanya-1497/assets/133139835/4685ce92-c0b4-4f78-9c0d-4322e9373629)
 
+The model runs for 20 epochs with a batch size of 101.
 
-```
+## Results
+
+After training our Convolutional Neural Network (CNN) model on the Malaria dataset, we evaluated its performance on the test set using various metrics. The evaluation results are as follows:
+
+**Accuracy:** The accuracy of 0.9563 implies that our model correctly classified approximately 95.63% of the test samples, showcasing its ability to make accurate predictions.
+
+**Precision:** With a precision of 0.9660, the model demonstrates its proficiency in minimizing false positive errors by accurately identifying true positive cases.
+
+**Recall:** The recall value of 0.9463 signifies that the model effectively captured approximately 94.63% of the actual positive cases in the dataset, highlighting its sensitivity to detecting infected instances.
+
+**AUC (Area Under the Curve):** The AUC value of 0.9889 corresponds to the area under the Receiver Operating Characteristic (ROC) curve, indicating a strong ability of the model to distinguish between the positive and negative classes.
+
+## Web Application
+
+The web application has been developed using Flask, a web framework that enables developers to create lightweight web applications rapidly and efficiently through Flask Libraries. To explore the application's functionality, ensure that the provided static, templates, app.py, and model.h5 files from this repository are placed within the same folder. Below, you will find images that illustrate the functioning of the application:
+
+<img src="https://github.com/ACM40960/project-Chaitanya-1497/assets/133139835/8eb9485d-8cae-4154-9455-42498b9f6035" alt="MalariaNeg" width="600"/>
+<img src="https://github.com/ACM40960/project-Chaitanya-1497/assets/133139835/15deb00c-ae63-425e-82e4-f8a1cdc20e29" alt="MalariaP" width="600"/>
+
+This application has been created to assist lab technicians. It empowers them to upload cell images acquired from microscopes. Upon submitting the image, the application swiftly generates predictions using the model.
+
