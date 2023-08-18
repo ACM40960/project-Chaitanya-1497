@@ -2,9 +2,9 @@
 
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.metrics import Precision, Recall, AUC
-from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, Dropout, BatchNormalization, Activation
-from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau, TensorBoard, CSVLogger
-from tensorflow.keras.regularizers import l1, l2
+from tensorflow.keras.layers import Conv2D, MaxPooling2D, Flatten, Dense, BatchNormalization, Activation
+from tensorflow.keras.callbacks import ReduceLROnPlateau
+from tensorflow.keras.regularizers import l2
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from PIL import Image
 
