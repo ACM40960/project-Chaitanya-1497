@@ -22,7 +22,7 @@ The dataset we hve used is taken from Kaggle.
 
 Link: "https://www.kaggle.com/datasets/miracle9to9/files1"
 
-The dataset comprises a total of 43,390 cell images captured through blood smear tests. It is divided into two classes: Parasitised and Uninfected. The dataset contains training and test sets. Additionally, to establish a validation set, 20% of the training data has been allocated.
+The dataset comprises a total of 43,390 cell images captured through blood smear tests. It is divided into two classes: Parasitised and Uninfected. The dataset contains training and test sets. Additionally, to establish a validation set, 20% of the training data has been allocated. Data augmentation is used in our model to increase the robustness.
 
 ## Libraries Used
 ```
@@ -42,4 +42,10 @@ The following are the libraries used to run the web application in the .py file
 from flask import Flask, render_template, request
 from keras.models import load_model
 from keras.preprocessing import image
+
+##Model
+The model consists of four convolutional layers, each using Rectified Linear Unit (ReLU) activation functions to introduce nonlinearity. The input data has a shape of (64, 64, 3). The convolutional layers employ ascending numbers of filters: 16, 32, 64, and 128 respectively. To accelerate training and serve as a regularizer, the Batch Normalization technique is utilized. Additionally, L2 regularization is employed to enhance generalization and mitigate overfitting. After the convolutional layers, the data is flattened and passed through a Deep Neural Network (DNN). The initial two layers of the DNN facilitate the learning of intricate data relationships. Finally, the output layer employs a sigmoid activation function to achieve binary classification.
+
+![image](https://github.com/ACM40960/project-Chaitanya-1497/assets/133139835/03490fe6-a563-478a-a75f-e7028887f6ae)
+
 ```
