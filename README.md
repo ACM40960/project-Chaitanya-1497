@@ -6,6 +6,7 @@ Malaria is a deadly disease that is caused by parasites that are transmitted to 
 No of Cases - 200 Million per year
 Death count - 400,000 per year
 Mostly Found in Africa and tropical countries.
+The project aims to use cell images acquired using blood smear tests to build a predictive model for Malaria diagnosis. This model can work in conjunction with traditional microscopy methods to expedite the process of obtaining diagnostic results.
 
 ### Diagnosis Methods
 
