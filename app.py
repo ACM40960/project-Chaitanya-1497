@@ -1,5 +1,3 @@
-import os
-
 from flask import Flask, render_template, request, url_for
 from keras.models import load_model
 from keras.preprocessing import image
@@ -8,7 +6,6 @@ app = Flask(__name__)
 
 # Load the  Keras model
 model = load_model('model.h5')
-
 
 # Function to predict the label of an image
 def predict_label(img_path):
